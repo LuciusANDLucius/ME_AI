@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "ME-Ai-app",
+    "slug": "ME-Ai-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "meaiapp",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "icon": "./assets/images/icon.png",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Ứng dụng cần quyền truy cập để lưu và chia sẻ ảnh AI từ Thư viện ảnh.",
+        "NSPhotoLibraryAddUsageDescription": "Ứng dụng cần quyền lưu ảnh nghệ thuật AI vào Thư viện ảnh của bạn."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#090d16",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "READ_MEDIA_IMAGES",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#090d16",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 120
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you pick and share images.",
+          "cameraPermission": "The app accesses your camera to let you take photos."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Ứng dụng cần quyền truy cập để lưu ảnh AI vào Thư viện ảnh của bạn.",
+          "savePhotosPermission": "Ứng dụng cần quyền lưu ảnh AI vào Thư viện ảnh của bạn.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ],
+      "expo-sharing"
+    ],
+    "experiments": {
+      "reactCompiler": true
+    }
+  }
+}
