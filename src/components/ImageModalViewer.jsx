@@ -54,12 +54,12 @@ export function ImageModalViewer({
       if (res.method === 'library') {
         Alert.alert(
           'Đã lưu thành công! 🎉',
-          'Ảnh đã được lưu trực tiếp vào Thư viện ảnh (Cuộn Camera) của iPhone.'
+          'Ảnh đã được lưu trực tiếp vào Thư viện ảnh (Cuộn Camera) của thiết bị.'
         );
       } else if (res.method === 'share-fallback') {
-        // Fallback share sheet opened
+        Alert.alert('Chia sẻ hoặc lưu ảnh', 'Bạn có thể chọn "Lưu hình ảnh" từ bảng chia sẻ.');
       } else if (res.method === 'web-download') {
-        Alert.alert('Thành công', 'Đang tải ảnh xuống máy tính.');
+        Alert.alert('Thành công 🎉', 'Đang tải ảnh xuống máy tính / thiết bị của bạn.');
       }
     } catch (e) {
       Alert.alert('Không thể lưu ảnh', e.message || 'Đã có lỗi xảy ra khi lưu ảnh.');

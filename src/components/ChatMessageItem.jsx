@@ -36,9 +36,13 @@ export function ChatMessageItem({
           'Đã lưu ảnh! 🎉',
           'Ảnh đã được lưu trực tiếp vào Thư viện ảnh (Cuộn Camera) của thiết bị.'
         );
+      } else if (res.method === 'web-download') {
+        Alert.alert('Đã tải ảnh! 🎉', 'Ảnh đang được tải về máy của bạn.');
+      } else if (res.method === 'share-fallback') {
+        Alert.alert('Chia sẻ hoặc lưu ảnh', 'Bạn có thể chọn "Lưu hình ảnh" từ bảng chia sẻ.');
       }
     } catch (e) {
-      Alert.alert('Không thể lưu ảnh', e.message || 'Đã xảy ra lỗi khi lưu ảnh');
+      Alert.alert('Không thể lưu ảnh', e?.message || 'Đã xảy ra lỗi khi lưu ảnh');
     } finally {
       setIsSaving(false);
     }
